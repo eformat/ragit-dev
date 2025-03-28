@@ -12,6 +12,8 @@ There are two tools we need:
 
 ## Setup Model As A Service
 
+// FIXME TODO
+
 ## Setup AnythingLLM Workbench
 
 1. Login to RHOAI as an admin user and browse to `Settings` > `Notebook Images`. Select `Import new image`.
