@@ -22,8 +22,9 @@ There are two tools we need:
 
 1. Use the following parameters in the Import image form:
 
-    Image Location: quay.io/rh-aiservices-bu/anythingllm-workbench
-    Name: anythingllm
+    **Image Location**: quay.io/rh-aiservices-bu/anythingllm-workbench
+
+    **Name**: anythingllm
 
     ![1-import-image2.png](images/1-import-image2.png)
 
@@ -41,10 +42,13 @@ There are two tools we need:
 
 1. Select `Create a workbench` using the following parameters:
 
-    Name: rag
-    Notebook Image: anythingllm
-    Deployment Size: small
-    Accelerator: none
+    **Name**: rag
+
+    **Notebook Image**: anythingllm
+
+    **Deployment Size**: small
+
+    **Accelerator**: none
 
     ![1-create-workbench1.png](images/1-create-workbench1.png)
 
@@ -66,13 +70,17 @@ There are two tools we need:
 
 1. Select the `Generic OpenAI` LLM Provider. Use the parameters from the Model as a Service in this form:
 
-    Be sure to append `/v1` to your base url:
+    > **Important** Be sure to append `/v1` to your base url
 
-    Base URL: https://granite-3-8b-instruct-maas-apicast-production.apps.prod.rhoai.rh-aiservices-bu.com/v1
-    API Key: <use your provided apikey>
-    Chat Model Name: granite-3-8b-instruct
-    Token context window: 4096
-    Max Tokens: 1024
+    **Base URL**: https://granite-3-8b-instruct-maas-apicast-production.apps.prod.rhoai.rh-aiservices-bu.com/v1
+
+    **API Key**: use your provided apikey
+
+    **Chat Model Name**: granite-3-8b-instruct
+
+    **Token context window**: 4096
+
+    **Max Tokens**: 1024
 
     ![1-anythingllm-llm.png](images/1-anythingllm-llm.png)
 
@@ -80,10 +88,13 @@ There are two tools we need:
 
 1. The next few screens are pro-forma.
 
-    How many people will be using your instance?: Just Me
-    Would you like to set up a password?: No
-    Data Handling & Privacy
-    Skip Survey
+    **How many people will be using your instance?**: Just Me
+
+    **Would you like to set up a password?**: No
+
+    **Data Handling & Privacy**
+
+    **Skip Survey**
 
     Select a Workspace name e.g. `rag` and you should see a blank workspace created.
 
@@ -99,8 +110,9 @@ There are two tools we need:
 
 1. Select `Chat Settings` and use the following form parameters:
 
-    Chat History: 1
-    LLM Temperature: 0.2
+    **Chat History**: 1
+
+    **LLM Temperature**: 0.2
 
     ![1-anythingllm-workspace-settings3.png](images/1-anythingllm-workspace-settings3.png)
 
