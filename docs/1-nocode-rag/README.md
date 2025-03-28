@@ -18,9 +18,3 @@ So i asked my RAG of [developers.redhat.com](https://developers.redhat.com) to `
 >  - https://developers.redhat.com/articles/2025/03/10/retrieval-augmented-generation-nodejs-podman-ai-lab-react
 
 🚗 We are going to learn how to do this together! 🚗
-
-!> **Important** notice with `inline code` and additional placeholder text used
-to force the content to wrap and span multiple lines.
-
-?> **Tip** notice with `inline code` and additional placeholder text used to
-force the content to wrap and span multiple lines.
