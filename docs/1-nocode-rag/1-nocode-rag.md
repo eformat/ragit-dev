@@ -150,6 +150,6 @@ We are now ready to talk to our docs !
 
     ![1-anythingllm-bitcoin.png](images/1-anythingllm-bitcoin.png)
 
-Well done. You have completed the zero code rag example.
+🥳🥳 Well done. You have completed the zero code rag example.
 
 ![mikey-dragon.png](images/mikey-dragon.png)
