@@ -1,14 +1,16 @@
 # RAG with ZERO Code
 
-We are going to use two tools to setup RAG without any code. Don't get too excited - there will be some configuration required!
+We are going to use three tools to setup RAG without any code. Don't get too excited - there will be some configuration required!
 
 Outside of commercial products, this is the easy button of RAG with low/no code.
 
 There are two tools we need:
 
-1. [Anything LLM](https://anythingllm.com/) is an All-in-One application for creating chatbots locally (or in the cloud). We will deploy this to a RHOAI workbench.
+1. [**Anything LLM**](https://anythingllm.com/) is an All-in-One application for creating chatbots locally (or in the cloud). We will deploy this to a RHOAI workbench.
 
-2. A Model to inference against. We will use `Model As A Service` available within RedHat. Any model that exposes the OpenAI api is suitable.
+1. A Model to inference against. We will use **Model As A Service** available within RedHat. Any model that exposes the OpenAI api is suitable.
+
+1. **RHOAI** - The Red Hat OpenShift AI Platform to run on.
 
 ## Setup Model As A Service
 
