@@ -1,4 +1,4 @@
-# special-potato
+# ragit-dev
 
 ### 🏃‍♀️ Running the docs site
 ```
