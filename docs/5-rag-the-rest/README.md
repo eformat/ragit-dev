@@ -7,6 +7,7 @@ All the other things ...
 - Agentic RAG
 - Visual RAG
 - Contextual RAG
+- Graph RAG
 - etc
 
 May not do all of these - but talk about them / resources.
