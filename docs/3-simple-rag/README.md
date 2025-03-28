@@ -1,6 +1,10 @@
 # Simple RAG
 
-This will demo Simple RAG on RHOAI. Choose a framework (will be opinionated here - but could be any framework ultimately)
+This will demo Simple RAG on RHOAI.
+
+This may be using [composer.ai](https://redhat-composer-ai.github.io/documentation/demo/walkthrough)
+
+Choose a framework (will be opinionated here - but could be any framework ultimately)
 
 - langchain
 - lamastack
