@@ -7,13 +7,14 @@ This may be using [composer.ai](https://redhat-composer-ai.github.io/documentati
 Choose a framework (will be opinionated here - but could be any framework ultimately)
 
 - langchain
+- llamaindex
 - lamastack
 - etc
 
 Use it to connect to a vectordb
 
 - postgres
-- mulvus
+- milvus
 - etc
 
 Serve a model
