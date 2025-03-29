@@ -3,6 +3,7 @@
   * [🤸‍♀️ RAG using Configuration Only](1-nocode-rag/1-nocode-rag.md)
 * [Local RAG](2-local-rag/README.md)
   * [🕵🏻 RAG on your laptop](2-local-rag/1-local-rag.md)
+  * [🎁 RAG with Podman Desktop](2-local-rag/1-podman-desktop.md)
 * [Simple RAG](3-simple-rag/README.md)
   * [✈️ Simple RAG](3-simple-rag/1-simple-rag.md)
 * [Complex RAG](4-complex-rag/README.md)
