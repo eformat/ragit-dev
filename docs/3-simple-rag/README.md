@@ -16,6 +16,7 @@ Use it to connect to a [vector store](https://docs.llamaindex.ai/en/stable/modul
 
 - postgres
 - milvus
+- chromadb
 - etc
 
 Serve a model
