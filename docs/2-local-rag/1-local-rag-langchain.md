@@ -483,8 +483,8 @@ You can also investigate the embeddings and text chunks that were retrieved from
 
 The source code for this excercise can be found here:
 
-[retriever.py](local-rag-langchain/retriever.py)
-[app.py](local-rag-langchain/app.py)
-[requirements.txt](requirements.txt)
+- [retriever.py](https://raw.githubusercontent.com/eformat/ragit-dev/refs/heads/main/docs/2-local-rag/local-rag-langchain/retriever.py)
+- [app.py](https://raw.githubusercontent.com/eformat/ragit-dev/refs/heads/main/docs/2-local-rag/local-rag-langchain/app.py)
+- [requirements.txt](https://raw.githubusercontent.com/eformat/ragit-dev/refs/heads/main/docs/2-local-rag/local-rag-langchain/requirements.txt)
 
 🥳🥳 Well done. You have completed the local RAG with langchain example!
