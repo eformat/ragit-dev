@@ -7,7 +7,7 @@ We are going to use a number of popular tools to build our local RAG including
 - [LLangChain](https://python.langchain.com/docs/introduction/) framework.
 - [Chainlit](https://docs.chainlit.io/get-started/overview) to build a conversational user interface.
 - [Postgres + Vector Extentsion](https://github.com/pgvector/pgvector) as the vector store.
-- [vLLM](https://docs.vllm.ai/en/latest/) is a fast and easy-to-use library for LLM inference and serving.
+- [vLLM](https://docs.vllm.ai/en/latest/) a library to server our LLM for inference and serving.
 
 ## Pre-requsites
 
@@ -480,5 +480,11 @@ Adjust the temperature and other settings on each call to experiment !
 You can also investigate the embeddings and text chunks that were retrieved from the vector store and passed into the LLM by opening the `Used RetrievalQA` drop down. You will see `VectorStoreRretriever` and a `StuffDocumentChain` feeding into a `query` then the LLM `Output`.
 
 ![images/2-retrieval-chain.png](images/2-retrieval-chain.png)
+
+The source code for this excercise can be found here:
+
+[retriever.py](local-rag-langchain/retriever.py)
+[app.py](local-rag-langchain/app.py)
+[requirements.txt](requirements.txt)
 
 🥳🥳 Well done. You have completed the local RAG with langchain example!
