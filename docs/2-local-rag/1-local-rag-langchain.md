@@ -78,7 +78,7 @@ Lets create a python class to retrieve the posts, chunk them and embed them into
 
 Paste this into a python file called `retriever.py`
 
-We use the default `HuggingFaceEmbeddings` which will download an open source [embedding model](https://huggingface.co/sentence-transformers/all-mpnet-base-v2) called **all-mpnet-base-v2** which you can go read and about.
+One of the first main steps in RAG is to split and convert each document into chunks. We use a recursive character test splitter with some sane default settings for that task. 
 
 ```python
 from langchain_community.document_loaders import WebBaseLoader
@@ -106,7 +106,11 @@ all_splits[0]
 
 You should be able to run this without error - `python retriever.py`
 
-Next append to `retriever.py` the code to load our documents into postgres.
+Next, we use the default `HuggingFaceEmbeddings` class to store our document splits in the vector store - postgres.
+
+The model that this class uses is an open source [embedding model](https://huggingface.co/sentence-transformers/all-mpnet-base-v2) called **all-mpnet-base-v2** which you can go read and about.
+
+Next append to `retriever.py` the code to load our document embeddings into postgres.
 
 ```python
 # Cleanup documents as PostgreSQL won't accept the NUL character, '\x00', in TEXT fields.
@@ -173,7 +177,8 @@ We are going to use vLLM to run locally. You can choose any model suitable for c
 
 We are going to use a quantized model [lmstudio-community/Llama-3.2-3B-Instruct-GGUF](https://huggingface.co/lmstudio-community/Llama-3.2-3B-Instruct-GGUF). Download it locally - this may take some time as it is an 4GB model.
 
-// FIXME - ValueError: GGUF model with architecture granite is not supported yet.
+// FIXME - Granite GGUF fails to load in latest vllm?
+// ValueError: GGUF model with architecture granite is not supported yet.
 // curl -LO https://huggingface.co/ibm-research/granite-3.2-2b-instruct-GGUF/resolve/main/granite-3.2-2b-instruct-f16.gguf?download=true
 // We are going to use a quantized model [ibm-research/granite-3.2-2b-instruct-GGUF](https://huggingface.co/ibm-research/granite-3.2-2b-instruct-GGUF). Download it locally - this may take some time as it is an 4GB model.
 
@@ -286,7 +291,9 @@ DB_CONNECTION_STRING = os.getenv(
 DB_COLLECTION_NAME = os.getenv("DB_COLLECTION_NAME", "documents_test")
 ```
 
-Next, we append our system prompt. This has to match the model architecture (Llama-3). The hugging face model card lists this out. We setup a fairly standard prompt asking for the model to act nicely.
+Next, we append our system prompt. In RAG the prompt is modified by adding the relevant documents from the vector store along with the question. This is denoted by the `{context}` and `{question}` template variables. 
+
+The begin, end and assistant part of the prompt has to match the model architecture (Llama-3). You can read about the [LLama-3.2 prompt format here.](https://www.llama.com/docs/model-cards-and-prompt-formats/llama3_2/). We setup a fairly standard prompt asking for the model to act nicely.
 
 The last line loads this into a Lang Chain Prompt template object.
 
@@ -398,7 +405,9 @@ async def setup_agent(settings):
     print("on_settings_update", settings)
 ```
 
-The last piece of code is the actual Chat interface (`ChatOpenAI`). We are using a local model without an APIKEY, and we use a langchain `RetrievalQA.from_chain_type` chain for the question and answers.
+The last piece of code is the actual Chat interface (`ChatOpenAI` class). We are using a local model without an APIKEY, and we use a langchain `RetrievalQA.from_chain_type` chain for the question and answers.
+
+The chain does the heavy lifting of retrieving the embeddings using a similarity search ([cosine similarity](https://en.wikipedia.org/wiki/Cosine_similarity)) and feeding that with the question to the LLM.
 
 The code is async, and the final handler prints out our response from the model along with document references.
 
@@ -469,5 +478,9 @@ Next we ask our RAG a question that is relevant to Lilian's blog posts.
 Adjust the temperature and other settings on each call to experiment !
 
 ![images/2-chainlit-settings.png](images/2-chainlit-settings.png)
+
+You can also investigate the embeddings and text chunks that were retrieved from the vector store and passed into the LLM by opening the `Used RetrievalQA` drop down. You will see `VectorStoreRretriever` and a `StuffDocumentChain` feeding into a `query` then the LLM `Output`.
+
+![images/2-retrieval-chain.png](images/2-retrieval-chain.png)
 
 🥳🥳 Well done. You have completed the local RAG with langchain example!
