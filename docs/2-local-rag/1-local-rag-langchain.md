@@ -29,9 +29,7 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-// FIXME - Clone repo ? or show working example at end ...
-
-Install dependencies
+Install dependencies.
 
 ```bash
 pip install --upgrade --quiet \
