@@ -18,3 +18,7 @@ So i asked my RAG of [developers.redhat.com](https://developers.redhat.com) to `
 >  - https://developers.redhat.com/articles/2025/03/10/retrieval-augmented-generation-nodejs-podman-ai-lab-react
 
 🚗 We are going to learn how to do this together! 🚗
+
+**Exercises**
+
+- [RAG with ZERO Code](1-nocode-rag/1-nocode-rag.md)
