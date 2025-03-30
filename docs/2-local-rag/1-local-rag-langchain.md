@@ -11,10 +11,12 @@ We are going to use a number of popular tools to build our local RAG including
 
 ## Pre-requsites
 
-- Laptop with a GPU is preferable
+- Laptop with a Nvidia GPU is preferable
 - Python3.11+ installed
 - Podman
 - Fast internet
+
+?> **Tip** if you do not have a GPU, it is possible to run this example on a CPU only. You can find the code and instructions here https://github.com/eformat/rag-local-intel-cpu. It is a lot (10x) slower though that on a GPU!
 
 ## Setup a workspace and project
 

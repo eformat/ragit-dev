@@ -1,6 +1,6 @@
 # RAG the Rest
 
-All the other things ...
+All the other fun and advanced things we could do with RAG ...
 
 - Semi-Structured RAG
 - Multimodal RAG
@@ -10,4 +10,4 @@ All the other things ...
 - Graph RAG
 - etc
 
-May not do all of these - but talk about them / resources.
+May not do all of these - but talk about them / link out to external resources.

@@ -4,7 +4,7 @@ This will demo Simple RAG on RHOAI.
 
 This may be using [composer.ai](https://redhat-composer-ai.github.io/documentation/demo/walkthrough)
 
-Choose a framework (will be opinionated here - but could be any framework ultimately)
+We extend the [local exercises](2-local-rag/README.md), choose a framework (will be opinionated here - but could be any framework ultimately)
 
 - [langchain](https://python.langchain.com/docs/tutorials/rag/)
 - [llamaindex](https://docs.llamaindex.ai/en/stable/examples/low_level/oss_ingestion_retrieval/)
@@ -25,4 +25,4 @@ Serve a model
 - using RHOAI
 - etc
 
-Show simple rag architecture on RHOAI.
+Show howto do a simple rag architecture with RHOAI.
