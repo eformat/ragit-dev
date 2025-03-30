@@ -1,10 +1,10 @@
 # Local RAG with LangChain
 
-[LangChain](https://python.langchain.com/docs/tutorials/rag/) is a very popular open source toolkit and framework for developing applications powered by LLM's. It has a number of paid for cloud services as well (LangSmith, LangGraph) that we won't dive into.
+[LangChain](https://python.langchain.com/docs/tutorials/rag/) is a very popular open source toolkit and framework for developing applications powered by LLM's.
 
 We are going to use a number of popular tools to build our local RAG including
 
-- [LLangChain](https://python.langchain.com/docs/introduction/) framework.
+- [LangChain](https://python.langchain.com/docs/introduction/) framework.
 - [Chainlit](https://docs.chainlit.io/get-started/overview) to build a conversational user interface.
 - [Postgres + Vector Extentsion](https://github.com/pgvector/pgvector) as the vector store.
 - [vLLM](https://docs.vllm.ai/en/latest/) a library to server our LLM for inference and serving.
