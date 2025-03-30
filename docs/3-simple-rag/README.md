@@ -26,3 +26,7 @@ Serve a model
 - etc
 
 Show howto do a simple rag architecture with RHOAI.
+
+In the next section [Complex Rag](4-complex-rag/README.md) - we will learn some techniques that will add quality control to our RAG so we can get it to production.
+
+🚗 Let's go ! 🚗
