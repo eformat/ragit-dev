@@ -227,7 +227,7 @@ curl -s -X 'GET' http://localhost:8080/v1/models -H 'accept: application/json' |
       "object": "model",
       "created": 1743227707,
       "owned_by": "vllm",
-      "root": "/home/mike/rag-langchain/Llama-3.2-3B-Instruct-Q8_0.gguf",
+      "root": "Llama-3.2-3B-Instruct-Q8_0.gguf",
       "parent": null,
       "max_model_len": 10000,
       "permission": [
