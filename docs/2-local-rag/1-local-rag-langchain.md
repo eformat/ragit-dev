@@ -372,7 +372,6 @@ async def start_chat():
     ).send()
     cl.user_session.set("settings", settings)
 
-    # Document store: pgvector vector store
     embeddings = HuggingFaceEmbeddings()
     store = PGVector(
         connection_string=DB_CONNECTION_STRING,
