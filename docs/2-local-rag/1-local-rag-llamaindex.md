@@ -405,7 +405,8 @@ async def start_chat():
         table_name=DB_COLLECTION_NAME,
         embed_dim=768,
     )
-    cl.user_session.set("store", store)
+    index = VectorStoreIndex.from_vector_store(vector_store=store, embed_model=Settings.embed_model)
+    cl.user_session.set("index", index)
 
 async def set_sources(response, response_message):
     label_list = []
@@ -429,7 +430,7 @@ async def set_sources(response, response_message):
 @cl.on_message
 async def main(message: cl.Message):
     settings = cl.user_session.get("settings")
-    store = cl.user_session.get("store")
+    index = cl.user_session.get("index")
 
     Settings.llm = OpenAILike(
         api_key="EMPTY",
@@ -447,7 +448,6 @@ async def main(message: cl.Message):
 
     msg = cl.Message(content="", author="Assistant")
 
-    index = VectorStoreIndex.from_vector_store(vector_store=store, embed_model=Settings.embed_model)
     query_engine = index.as_query_engine(streaming=True, similarity_top_k=settings["top_k"])
     query_engine.update_prompts({"response_synthesizer:text_qa_template": DEFAULT_TEXT_QA_PROMPT})
 
