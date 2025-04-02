@@ -72,13 +72,13 @@ podman exec -it postgres psql -d vectordb -c "CREATE EXTENSION vector;"
 
 ## Retrieve some documents
 
-Lilian Weng is a Researcher with interests ni Deep Learning, Machine Learning, Network Science. We are going to use some of her web based posts to RAG with.
+Lilian Weng is a Researcher with interests in Deep Learning, Machine Learning, Network Science. We are going to use some of her web based posts to RAG with.
 
 Lets create a python class to retrieve the posts, chunk them and embed them into postgres.
 
 Paste this into a python file called `retriever.py`
 
-One of the first main steps in RAG is to split and convert each document into chunks. We use a recursive character test splitter with some sane default settings for that task. 
+One of the first main steps in RAG is to split and convert each document into chunks. We use a recursive character test splitter with some sane default settings for that task.
 
 ```python
 from langchain_community.document_loaders import WebBaseLoader
@@ -173,14 +173,9 @@ Install vLLM in your venv - this may take some time as the packages are large.
 pip install vllm --upgrade
 ```
 
-We are going to use vLLM to run locally. You can choose any model suitable for chat really (aka they have been Instruction fine tuned). The main limitations are based on your GPU vRAM size (i have a NVIDIA GeForce RTX 4070 - 8GB VRAM on this laptop), the contenxt length we use and the model supports - and we of course want an open source model!
+We are going to use vLLM to run locally. You can choose any model suitable for chat really (aka they have been Instruction fine tuned). The main limitations are based on your GPU vRAM size (i have a NVIDIA GeForce RTX 4070 - 8GB VRAM on this laptop), the contenxt length we use and the maximum context length the model supports - and we of course want an open source model!
 
 We are going to use a quantized model [lmstudio-community/Llama-3.2-3B-Instruct-GGUF](https://huggingface.co/lmstudio-community/Llama-3.2-3B-Instruct-GGUF). Download it locally - this may take some time as it is an 4GB model.
-
-// FIXME - Granite GGUF fails to load in latest vllm?
-// ValueError: GGUF model with architecture granite is not supported yet.
-// curl -LO https://huggingface.co/ibm-research/granite-3.2-2b-instruct-GGUF/resolve/main/granite-3.2-2b-instruct-f16.gguf?download=true
-// We are going to use a quantized model [ibm-research/granite-3.2-2b-instruct-GGUF](https://huggingface.co/ibm-research/granite-3.2-2b-instruct-GGUF). Download it locally - this may take some time as it is an 4GB model.
 
 ```bash
 curl -LO https://huggingface.co/lmstudio-community/Llama-3.2-3B-Instruct-GGUF/resolve/main/Llama-3.2-3B-Instruct-Q8_0.gguf?download=true
@@ -200,7 +195,7 @@ python -m vllm.entrypoints.openai.api_server \
 
 ![images/2-vllm-started.png](images/2-vllm-started.png)
 
-I have [**nvtop**](https://rpmfind.net/linux/epel/9/Everything/x86_64/Packages/n/nvtop-3.1.0-2.el9.x86_64.rpm) installed - its like top but gor GPU's - the LLM is loaded into the GPU on the left - NVIDIA GeForce RTX 4070
+I have [**nvtop**](https://rpmfind.net/linux/epel/9/Everything/x86_64/Packages/n/nvtop-3.1.0-2.el9.x86_64.rpm) installed - its like top but for GPU's - the LLM is loaded into the GPU on the left - NVIDIA GeForce RTX 4070
 
 ![images/2-nvtop.png](images/2-nvtop.png)
 
@@ -291,7 +286,7 @@ DB_CONNECTION_STRING = os.getenv(
 DB_COLLECTION_NAME = os.getenv("DB_COLLECTION_NAME", "documents_test")
 ```
 
-Next, we append our system prompt. In RAG the prompt is modified by adding the relevant documents from the vector store along with the question. This is denoted by the `{context}` and `{question}` template variables. 
+Next, we append our system prompt. In RAG the prompt is modified by adding the relevant documents from the vector store along with the question. This is denoted by the `{context}` and `{question}` template variables.
 
 The begin, end and assistant part of the prompt has to match the model architecture (Llama-3). You can read about the [LLama-3.2 prompt format here.](https://www.llama.com/docs/model-cards-and-prompt-formats/llama3_2/). We setup a fairly standard prompt asking for the model to act nicely.
 
