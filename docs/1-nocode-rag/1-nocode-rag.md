@@ -14,7 +14,25 @@ There are two tools we need:
 
 ## Setup Model As A Service
 
-// FIXME TODO
+1. Login to [Red Hat MAAS](https://maas.apps.prod.rhoai.rh-aiservices-bu.com/admin/applications)
+
+1. Under `Apps and API Keys` > Click `Create new application`
+
+    ![1-maas1.png](images/1-maas1.png)
+
+1. Select a model - `Granite-3.1-8B-Instruct` and enter a name e.g. `my-granite-3.1`
+
+    ![1-maas2.png](images/1-maas2.png)
+
+1. You can now use the model parameters provided - we need these for later.
+
+    **Base URL**: https://granite-3-8b-instruct-maas-apicast-production.apps.prod.rhoai.rh-aiservices-bu.com/v1
+
+    **API Key**: use your provided apikey
+
+    **Chat Model Name**: granite-3-8b-instruct
+
+    ![1-maas3.png](images/1-maas3.png)
 
 ## Setup AnythingLLM Workbench
 
