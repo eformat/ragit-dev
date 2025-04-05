@@ -1,40 +1,30 @@
 # RAGIT ! - ragit.dev
 
+A hands-on guide to Retrieval Augmented Generation (RAG) with containers and OpenShift.
+
 <!-- panels:start -->
 <!-- div:floating-cat -->
 <img src="images/daisy.png">
 <!-- panels:end -->
 
-<!-- tabs:start -->
+## 🦆 Conventions
 
-#### **English**
+When running through the exercise, we're tried to call out where things need replacing. The key ones are anything inside an `<>` should be replaced. For example, if your team is called `biscuits` then in the instructions if you see `\<USER_NAME\>` this should be replaced with `biscuits` like so:
+    <div class="highlight" style="background: #f7f7f7">
+    <pre><code class="language-bash">
+    name: <\USER_NAME\>
+    # ^ this becomes
+    name: biscuits
+    </code></pre></div>
 
-🐑🐑 Hello! 🐑🐑
+There are lots of code blocks for you to copy and paste. They have little ✂️ icon on the right if you move your cursor on the code block.
 
-#### **French**
+```bash
+echo "like this one :)"
+```
 
-🐀🐀 Bonjour! 🐀🐀
+But there are also some blocks that you shouldn't copy and paste which doesn't have the copy✂️ icon. That means you should validate your outputs or yamls against the given block.
 
-#### **Italian**
+!> **Important** notices - pay heed if you want to stay on-piste ! ⛷️
 
-🦜🦜 Ciao! 🦜🦜
-
-#### **Spanish**
-
-🦄🦄 Hola 🦄🦄
-
-#### **Japanese**
-
-🦩🦩 こんにちは 🦩🦩
-
-<!-- tabs:end -->
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id leo eu tortor vulputate mattis nec ac libero. Maecenas finibus est eu nisl egestas euismod. Nullam et finibus nulla. Nullam commodo non elit et imperdiet. Nullam tincidunt mollis egestas. Nulla nec lorem non turpis venenatis ornare. Donec id libero magna. Etiam sed ante massa.
-
-Nullam id lorem est. Interdum et malesuada fames ac ante ipsum primis in faucibus. In semper arcu enim, elementum feugiat diam porta quis. Aenean eget eros lacinia, lobortis lectus eu, faucibus nulla. Curabitur cursus purus ac mauris semper semper. Sed varius sagittis leo, sit amet vulputate nibh consequat quis. Etiam finibus pulvinar diam ac interdum. Cras molestie ante vel aliquam lacinia. Curabitur suscipit malesuada facilisis. Sed in lorem vitae orci molestie interdum. Nunc luctus eleifend libero eu vulputate.
-
-!> **Important** notice with `inline code` and additional placeholder text used
-to force the content to wrap and span multiple lines.
-
-?> **Tip** notice with `inline code` and additional placeholder text used to
-force the content to wrap and span multiple lines.
+?> **Tip** notices - handy help and areas to further explore 💁
