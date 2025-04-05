@@ -80,9 +80,7 @@ You will need:
 
     And the answer:
 
-    > A. To ensure privacy using Bitcoin, you can achieve this in two ways:
-    1.  **Keep public keys anonymous**: The public can see that someone is sending an amount to someone else, but without information linking the transaction to anyone. This is similar to the level of information released by stock exchanges, where the time and size of individual trades are made public, but without telling who the parties were.
-    2.  **Use a new key pair for each transaction**: A new key pair should be used for each transaction to keep them from being linked to a common owner. Some linking is still unavoidable with multi-input transactions, which necessarily reveal that their inputs were owned by the same owner. However, by using a new key pair for each transaction, you can minimize the risk of revealing the owner's identity. 
+    > A. To ensure privacy using Bitcoin, you can achieve this in two ways: 1.  **Keep public keys anonymous**: The public can see that someone is sending an amount to someone else, but without information linking the transaction to anyone. This is similar to the level of information released by stock exchanges, where the time and size of individual trades are made public, but without telling who the parties were. 2.  **Use a new key pair for each transaction**: A new key pair should be used for each transaction to keep them from being linked to a common owner. Some linking is still unavoidable with multi-input transactions, which necessarily reveal that their inputs were owned by the same owner. However, by using a new key pair for each transaction, you can minimize the risk of revealing the owner's identity.
 
     ![2-ramalama-chat.png](images/2-ramalama-chat.png)
 
