@@ -1,4 +1,4 @@
-* [Home](/)
+* [Intro](/)
 * [No Code RAG](1-nocode-rag/README.md)
   * [🤸‍♀️ RAG using Configuration Only](1-nocode-rag/1-nocode-rag.md)
 * [Local RAG](2-local-rag/README.md)
