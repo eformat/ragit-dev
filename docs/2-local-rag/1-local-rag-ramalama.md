@@ -89,5 +89,3 @@ You will need:
 RamaLama also has options for `serving` an OpenAPI endpoint (see `ramalama serve`) as well as helping you get your RAG to production using OCI models. We will check these options out in the next section [Simple Rag](3-simple-rag/README.md)
 
 🥳🥳 Well done. You have completed the RamaLama local rag example.
-
-![mikey-dragon.png](images/mikey-dragon.png)
