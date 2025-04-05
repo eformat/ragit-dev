@@ -38,7 +38,9 @@ You will need:
     Here we use the original [Bitcoin.pdf](https://bitcoin.org/bitcoin.pdf) paper as RAG content.
 
     ```bash
-    ramalama rag bitcoin.pdf quay.io/eformat/ramalama-rag-data:latest
+    ramalama rag \
+        bitcoin.pdf \
+        quay.io/eformat/ramalama-rag-data:latest
     ```
 
     ![2-ramalama-raggen.png](images/2-ramalama-raggen.png)
@@ -54,7 +56,9 @@ You will need:
     Now run the RamaLama `convert` function giving it the name of the image we wish to produce:
 
     ```bash
-    ramalama convert ~/instructlab/models/Llama-3.2-3B-Instruct-Q8_0.gguf quay.io/eformat/llama-3.2-3b-instruct-q8_0-gguf:latest
+    ramalama convert \
+        ~/instructlab/models/Llama-3.2-3B-Instruct-Q8_0.gguf \
+        quay.io/eformat/llama-3.2-3b-instruct-q8_0-gguf:latest
     ```
 
     ![2-ramalama-convert.png](images/2-ramalama-convert.png)
@@ -63,7 +67,9 @@ You will need:
 1. Now we can run our RAG. RamaLama creates a container with the RAG vector database and the model mounted into it. Then it starts a chatbot that can interact with the AI model using the RAG data.
 
     ```bash
-    ramalama run --rag quay.io/eformat/ramalama-rag-data:latest quay.io/eformat/llama-3.2-3b-instruct-q8_0-gguf:latest
+    ramalama run \
+        --rag quay.io/eformat/ramalama-rag-data:latest \
+        quay.io/eformat/llama-3.2-3b-instruct-q8_0-gguf:latest
     ```
 
     ![2-ramalama-run.png](images/2-ramalama-run.png)
