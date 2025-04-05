@@ -63,7 +63,6 @@ You will need:
 
     ![2-ramalama-convert.png](images/2-ramalama-convert.png)
 
-
 1. Now we can run our RAG. RamaLama creates a container with the RAG vector database and the model mounted into it. Then it starts a chatbot that can interact with the AI model using the RAG data.
 
     ```bash
