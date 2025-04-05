@@ -24,7 +24,7 @@ You will need:
 
 ## Install RamaLama for RAG
 
-1. Install [RamaLama for your operating system](https://github.com/containers/ramalama). I found it easiest to use python:
+1. Install [RamaLama for your operating system](https://github.com/containers/ramalama?tab=readme-ov-file#install). I found it easiest to use python:
 
     ```bash
     mkdir ramalama-demo && cd ramalama-demo
