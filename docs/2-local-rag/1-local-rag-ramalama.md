@@ -38,7 +38,7 @@ You will need:
     Here we use the original [Bitcoin.pdf](https://bitcoin.org/bitcoin.pdf) paper as RAG content.
 
     ```bash
-    ramalama rag \
+    ramalama rag --debug \
         bitcoin.pdf \
         quay.io/eformat/ramalama-rag-data:latest
     ```
