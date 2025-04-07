@@ -12,9 +12,9 @@ We extend the [local exercises](2-local-rag/README.md) by deploying them to RHOA
 
 Choose one of the frameworks from the local rag examples:
 
-- [RamaLama](2-local-rag/1-local-rag-ramalama)
-- [LangChain](2-local-rag/1-local-rag-langchain)
-- [LlamaIndex](2-local-rag/1-local-rag-llamaindex)
+- [RamaLama](2-local-rag/2-local-rag-ramalama)
+- [LangChain](2-local-rag/2-local-rag-langchain)
+- [LlamaIndex](2-local-rag/2-local-rag-llamaindex)
 - [quarkus/langchain4j](https://docs.quarkiverse.io/quarkus-langchain4j/dev/easy-rag.html)
 
 We will use it to connect to a [vector store](https://docs.llamaindex.ai/en/stable/module_guides/storing/vector_stores/):
