@@ -89,7 +89,9 @@ RamaLama lets you easily convert and use your RAG vector database and LLM as OCI
     ADD rag_framework /usr/local/bin
     USER 0
     RUN chmod 777 -R /rag/vector.db/.lock
+    RUN dnf -y install https://rpmfind.net/linux/epel/9/Everything/x86_64/Packages/n/nvtop-3.1.0-2.el9.x86_64.rpm
     USER 1001
+EOF
     ```
 
     Build the container. Replace the image repository names with your own:
@@ -137,7 +139,7 @@ RamaLama lets you easily convert and use your RAG vector database and LLM as OCI
     Grab the Host URL for our exposed Route.
 
     ```bash
-    HOST=$(oc -n ramalama get route rag --template='{{ .spec.host }}')
+    HOST=https://$(oc -n ramalama get route rag --template='{{ .spec.host }}')
     ```
 
     Test the RAG and LLM model.
