@@ -62,7 +62,7 @@ RamaLama lets you easily convert and use your RAG vector database and LLM as OCI
 
     Unfortunately this is still an [alpha feature](https://kubernetes.io/docs/concepts/storage/volumes/#image) in Kubernetes that is not available without setting the `FeatureGate ImageVolume` in k8s 1.31+
 
-1. For now - let's workaround this by using a multi-stage `Containerfile` to build an image we can deploy to current OpenShift versions (4.16-4.18).
+1. For now - let's workaround this by using a multi-stage `Containerfile` to build an image we can deploy to current OpenShift versions (4.16-4.18). You can skip this step if you have not created the images from the local exercise.
 
     Create a Containerfile that builds in our model and rag vectordb into one image. The `rag_framework` script is from the RamaLamma project.
 
@@ -162,3 +162,7 @@ RamaLama lets you easily convert and use your RAG vector database and LLM as OCI
         ]
     }
     ```
+
+    ![images/3-ramalama-chat.png](images/3-ramalama-chat.png)
+
+🥳🥳 Well done. You have completed deploying RamaLama RAG to OpenShift example.
