@@ -7,7 +7,7 @@
   * [🕵🏻 RAG on your laptop with langchain](2-local-rag/2-local-rag-langchain.md)
   * [🔫 RAG on your laptop with llamaindex](2-local-rag/2-local-rag-llamaindex.md)
 * [Simple RAG](3-simple-rag/README.md)
-  * [✈️ Simple RAG](3-simple-rag/3-simple-rag.md)
+  * [✈️ Deploy RamaLama RAG to OpenShift](3-simple-rag/3-simple-rag-ramalama.md)
 * [Complex RAG](4-complex-rag/README.md)
   * [🔭 Complex RAG](4-complex-rag/1-complex-rag.md)
 * [RAG 4 Life](5-rag-the-rest/README.md)

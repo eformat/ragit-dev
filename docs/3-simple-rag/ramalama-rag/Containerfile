@@ -1,0 +1,10 @@
+FROM quay.io/eformat/llama-3.2-3b-instruct-q8_0-gguf:latest as model
+FROM quay.io/eformat/ramalama-rag-data:latest as rag
+FROM quay.io/ramalama/cuda:0.7
+COPY --from=model /models /models
+COPY --from=rag / /rag
+RUN rm -rf /tmp/fastembed_cache
+ADD rag_framework /usr/local/bin
+USER 0
+RUN chmod 777 -R /rag/vector.db/.lock
+USER 1001
