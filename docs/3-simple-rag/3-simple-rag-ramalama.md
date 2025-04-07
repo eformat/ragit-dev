@@ -16,7 +16,7 @@ RamaLama lets you easily convert and use your RAG vector database and LLM as OCI
     quay.io/eformat/ramalama-rag-data:latest
     ```
 
-    Don't worry if you have not done the local exercise, we can use some pre-created examples to deploy into OpenShift.
+    Don't worry if you have not done the local exercise, we can use the pre-created example images to deploy into OpenShift.
 
 1. We can push our models into a container registry such as `quay.io`. You can skip this step if you have not created these from the local exercise. Replace the image repository names with your own.
 
