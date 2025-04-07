@@ -18,19 +18,21 @@ RamaLama lets you easily convert and use your RAG vector database and LLM as OCI
 
     Don't worry if you have not done the local exercise, we can use some pre-created examples to deploy into OpenShift.
 
-1. We can push our models into a container registry such as `quay.io`. You can skip this step if you have not created these from the local exercise.
+1. We can push our models into a container registry such as `quay.io`. You can skip this step if you have not created these from the local exercise. Replace the image repository names with your own.
+
+    Login to the registry with your username and token.
 
     ```bash
     podman login quay.io
     ```
 
-    Push our LLM container based model to quay:
+    Push our LLM container based model to quay. Replace the image repository names with your own:
 
     ```bash
     podman push quay.io/eformat/llama-3.2-3b-instruct-q8_0-gguf:latest
     ```
 
-    Push our RAG vector db model to quay:
+    Push our RAG vector db model to quay. Replace the image repository names with your own:
 
     ```bash
     podman push quay.io/eformat/ramalama-rag-data:latest
@@ -66,6 +68,8 @@ RamaLama lets you easily convert and use your RAG vector database and LLM as OCI
 
     Create a Containerfile that builds in our model and rag vectordb into one image. The `rag_framework` script is from the RamaLamma project.
 
+    The [source files are in the folder here](https://github.com/eformat/ragit-dev/tree/main/docs/3-simple-rag/ramalama-rag) if you wish to run this yourself. The example container images are public if you have not created them locally yourself.
+
     ```bash
     cat <<'EOF' >> Containerfile
     FROM quay.io/eformat/llama-3.2-3b-instruct-q8_0-gguf:latest as model
@@ -80,13 +84,13 @@ RamaLama lets you easily convert and use your RAG vector database and LLM as OCI
     USER 1001
     ```
 
-    Build the container:
+    Build the container. Replace the image repository names with your own:
 
     ```bash
     podman build -t quay.io/eformat/ramalama-demo-rag:latest -f Containerfile
     ```
 
-    Push to quay:
+    Push to quay. Replace the image repository names with your own:
 
     ```bash
     podman push quay.io/eformat/ramalama-demo-rag:latest
@@ -106,7 +110,7 @@ RamaLama lets you easily convert and use your RAG vector database and LLM as OCI
     oc new-project ramalama
     ```
 
-    Deploy the RamaLama application.
+    Deploy the RamaLama application. The [rag file](https://raw.githubusercontent.com/eformat/ragit-dev/refs/heads/main/docs/3-simple-rag/ramalama-rag/rag.yaml) is located here in git. Replace the `image:` if you pushed your own version.
 
     ```bash
     oc apply -f rag.yaml
