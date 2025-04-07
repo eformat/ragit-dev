@@ -18,7 +18,11 @@ RamaLama lets you easily convert and use your RAG vector database and LLM as OCI
 
     Don't worry if you have not done the local exercise, we can use the pre-created example images to deploy into OpenShift.
 
-1. We can push our models into a container registry such as `quay.io`. You can skip this step if you have not created these from the local exercise. Replace the image repository names with your own.
+1. We can push our models into a container registry such as `quay.io`. Replace the image repository names with your own.
+
+    <p class="warn">
+      <b>Tip</b> You can skip this step if you have not created these from the local exercise.
+    </p>
 
     Login to the registry with your username and token.
 
@@ -38,7 +42,7 @@ RamaLama lets you easily convert and use your RAG vector database and LLM as OCI
     podman push quay.io/eformat/ramalama-rag-data:latest
     ```
 
-1. RamaLama can generate Kubernetes YAML's as well as quadlet based resources (for edge computing). Let's take a look at the Kuernetes example:
+1. RamaLama can generate Kubernetes YAML's as well as quadlet based resources (for edge computing). Let's take a look at the Kubernetes example:
 
     ```bash
     ramalama serve \
@@ -64,7 +68,11 @@ RamaLama lets you easily convert and use your RAG vector database and LLM as OCI
 
     Unfortunately this is still an [alpha feature](https://kubernetes.io/docs/concepts/storage/volumes/#image) in Kubernetes that is not available without setting the `FeatureGate ImageVolume` in k8s 1.31+
 
-1. For now - let's workaround this by using a multi-stage `Containerfile` to build an image we can deploy to current OpenShift versions (4.16-4.18). You can skip this step if you have not created the images from the local exercise.
+1. For now - let's workaround this by using a multi-stage `Containerfile` to build an image we can deploy to current OpenShift versions (4.16-4.18).
+
+    <p class="warn">
+      <b>Tip</b> You can skip this step if you have not created these from the local exercise.
+    </p>
 
     Create a Containerfile that builds in our model and rag vectordb into one image. The `rag_framework` script is from the RamaLamma project.
 
