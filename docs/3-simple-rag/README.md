@@ -2,13 +2,19 @@
 
 Demo Simple RAG on RHOAI.
 
-1. Get yourself a [Composer.ai](https://redhat-composer-ai.github.io/documentation/demo/walkthrough) LAB in demo.redhat.com
-
-![3-composer-ai.png](images/3-composer-ai.png)
-
 ## Exercises
 
-We extend the [local exercises](2-local-rag/README.md) by deploying them to RHOAI. The high level steps will be as follows:
+**Exercises**
+
+If you have access to Red Hat Demo Platform you can try the push button deployment of RAG using Composer AI.
+
+- [Composer AI](3-simple-rag/3-simple-rag-composer-ai)
+
+We extend the [local exercises](2-local-rag/README.md) by deploying them to RHOAI.
+
+- [RamaLama](3-simple-rag/3-simple-rag-ramalama.md)
+
+The high level steps are ...
 
 Choose one of the frameworks from the local rag examples:
 
@@ -17,19 +23,20 @@ Choose one of the frameworks from the local rag examples:
 - [LlamaIndex](2-local-rag/2-local-rag-llamaindex)
 - [quarkus/langchain4j](https://docs.quarkiverse.io/quarkus-langchain4j/dev/easy-rag.html)
 
-We will use it to connect to a [vector store](https://docs.llamaindex.ai/en/stable/module_guides/storing/vector_stores/):
+Use it to connect to a [vector store](https://docs.llamaindex.ai/en/stable/module_guides/storing/vector_stores/):
 
 - postgres
 - chromadb
 - quadrant
 - milvus
+- ...
 
 Then serve an LLM model:
 
-- using MaaS
 - using RHOAI
+- using MaaS
 
-And Show how to do a simple rag architecture with RHOAI.
+And Show how to do a deploy a simple rag architecture with RHOAI.
 
 🤑 !! PROFIT !! 🤑
 
