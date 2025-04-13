@@ -76,7 +76,7 @@ Lets create a python class to retrieve the posts, chunk them and embed them into
 
 Paste this into a python file called `retriever.py`
 
-One of the first main steps in RAG is to split and convert each document into chunks. We use a recursive character test splitter with some sane default settings for that task. 
+One of the first main steps in RAG is to split and convert each document into chunks. We use a recursive character test splitter with some sane default settings for that task.
 
 ```python
 from llama_index.readers.web import SimpleWebPageReader
@@ -329,7 +329,15 @@ DB_CONNECTION_STRING = os.getenv(
 )
 DB_COLLECTION_NAME = os.getenv("DB_COLLECTION_NAME", "documents_test")
 url = make_url(DB_CONNECTION_STRING)
+```
 
+Next, we append our system prompt. In RAG the prompt is modified by adding the relevant documents from the vector store along with the question. This is denoted by the `{context_str}` and `{question_str}` template variables.
+
+The begin, end and assistant part of the prompt has to match the model architecture (Llama-3). You can read about the [LLama-3.2 prompt format here.](https://www.llama.com/docs/model-cards-and-prompt-formats/llama3_2/). We setup a fairly standard prompt asking for the model to act nicely.
+
+The last line loads this into a Lang Chain Prompt template object.
+
+```python
 template = "Q: {question} A:"
 
 if re.search(r"LLama-3", MODEL_NAME, flags=re.IGNORECASE):
@@ -351,7 +359,11 @@ if re.search(r"LLama-3", MODEL_NAME, flags=re.IGNORECASE):
 DEFAULT_TEXT_QA_PROMPT = PromptTemplate(
     template, prompt_type=PromptType.QUESTION_ANSWER
 )
+```
 
+The next piece of code is our startup handler. It loads the Chat Setting we expose as well as setting up our vector store connection to postgres.
+
+```python
 Settings.embed_model = HuggingFaceEmbedding(model_name="sentence-transformers/all-mpnet-base-v2")
 
 @cl.on_chat_start
@@ -426,7 +438,15 @@ async def set_sources(response, response_message):
         count += 1
     response_message.content += "\n\nSources: " + ", ".join(label_list)
     await response_message.update()
+```
 
+The last piece of code is the actual Chat interface (`OpenAILike` class). We are using a local model without an APIKEY, and we query the index engine `query_engine.query` with the question and wait async for the answers.
+
+The index does the heavy lifting of retrieving the embeddings using a similarity search ([cosine similarity](https://en.wikipedia.org/wiki/Cosine_similarity)) and feeding that with the question to the LLM.
+
+The code is async, and the final handler prints out our response from the model along with document references.
+
+```python
 @cl.on_message
 async def main(message: cl.Message):
     settings = cl.user_session.get("settings")

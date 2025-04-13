@@ -314,7 +314,7 @@ if re.search(r"LLama-3", MODEL_NAME, flags=re.IGNORECASE):
 QA_CHAIN_PROMPT = PromptTemplate(input_variables=["question"], template=template)
 ```
 
-The next piece of code is out startup handler. It loads the Chat Setting we expose as well as setting up our vector store connection to postgres.
+The next piece of code is our startup handler. It loads the Chat Setting we expose as well as setting up our vector store connection to postgres.
 
 ```python
 @cl.on_chat_start
